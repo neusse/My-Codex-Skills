@@ -8,6 +8,7 @@ Generated: 2026-05-04
 | `codex-windows-bootstrap` | Bootstraps and verifies a Windows Codex development environment. |
 | `fsd-writer` | Generates structured functional specification documents from rough requirements. |
 | `handoff` | Creates and refreshes durable `HANDOFF.md` operational checkpoints. |
+| `news-scout` | Finds and summarizes high-signal recent news for a defined topic, company, or watchlist. |
 | `python-architecture-designer` | Designs Python module architecture, interfaces, and data flow. |
 | `python-integration-finisher` | Wires completed Python modules into a working end-to-end app. |
 | `python-module-implementer` | Implements a single Python module from roadmap/design specs. |
