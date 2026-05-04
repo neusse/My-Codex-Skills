@@ -1,0 +1,4 @@
+interface:
+  display_name: "FSD Writer"
+  short_description: "Generate or evolve engineering-grade functional specification docs"
+  default_prompt: "Generate or update a Functional Specification Document (FSD) from the project brief and repo context, ask concise questions only when architecture-critical details are missing, and maintain requirement-to-test traceability."

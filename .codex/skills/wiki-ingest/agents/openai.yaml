@@ -1,0 +1,4 @@
+interface:
+  display_name: "Wiki Ingest"
+  short_description: "Add sources to an LLM wiki"
+  default_prompt: "Use $wiki-ingest to add this source to my wiki, summarize it, update related pages, and maintain backlinks."

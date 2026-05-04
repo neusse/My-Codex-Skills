@@ -1,0 +1,4 @@
+interface:
+  display_name: "Python Module Implementer"
+  short_description: "Implement one module from roadmap spec"
+  default_prompt: "Implement one Python roadmap module end-to-end with code, tests, and concise docs while preserving architecture contracts."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Python Project Template Scaffolder"
+  short_description: "Bootstrap a full Python project with workflow docs"
+  default_prompt: "Create a new Python project directory with src/tests, root templates, and Documents templates for fsd-writer and all python-* workflow skills."

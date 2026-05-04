@@ -1,0 +1,4 @@
+interface:
+  display_name: "Wiki Init"
+  short_description: "Create a structured LLM wiki"
+  default_prompt: "Use $wiki-init to bootstrap a new LLM-maintained wiki with schema, index, log, overview, and page folders."

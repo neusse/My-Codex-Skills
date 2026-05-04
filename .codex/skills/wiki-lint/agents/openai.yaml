@@ -1,0 +1,4 @@
+interface:
+  display_name: "Wiki Lint"
+  short_description: "Audit wiki health issues"
+  default_prompt: "Use $wiki-lint to audit my wiki for broken links, stale claims, missing frontmatter, contradictions, and coverage gaps."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "US Stock Picker"
+  short_description: "Pick US equities and ETFs with Schwab-primary data, cross-checks, and capital-aware position management."
+  default_prompt: "Use $us-stock-picker to recommend or manage US equities and ETFs with Schwab as the primary data source, yfinance and Alpaca cross-checks, Alpaca fallback when Schwab is unavailable, and persistent portfolio-state tracking in stock_logs."

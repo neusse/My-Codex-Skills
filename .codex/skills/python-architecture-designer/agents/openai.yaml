@@ -1,0 +1,4 @@
+interface:
+  display_name: "Python Architecture Designer"
+  short_description: "Requirements to architecture and module contracts"
+  default_prompt: "Transform approved Python requirements into an architecture with module boundaries, interfaces, data model, and ADR decisions."

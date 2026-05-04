@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Handoff"
+  short_description: "Dropoff + pickup workflow using HANDOFF.md"
+  default_prompt: "Use project-handoff in pickup mode: read HANDOFF.md, check staleness, compare repo state, and produce an immediate startup plan with commands."

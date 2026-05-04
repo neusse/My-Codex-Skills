@@ -1,0 +1,4 @@
+interface:
+  display_name: "Python Release Ops"
+  short_description: "Plan release, deploy, and operate safely"
+  default_prompt: "Create a Python release and operations plan with deployment checklist, observability, rollback, and post-release verification."

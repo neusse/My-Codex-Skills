@@ -1,0 +1,4 @@
+interface:
+  display_name: "Python Test Strategy"
+  short_description: "Design layered test plan and coverage targets"
+  default_prompt: "Create a layered Python test strategy (unit/integration/e2e), fixtures, and CI execution order tied to system risk."

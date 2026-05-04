@@ -1,0 +1,4 @@
+interface:
+  display_name: "Python Quality Gates"
+  short_description: "Set lint, typing, test, and pre-commit gates"
+  default_prompt: "Define and enforce Python quality gates using ruff, mypy, pytest, pre-commit, and CI fail thresholds."

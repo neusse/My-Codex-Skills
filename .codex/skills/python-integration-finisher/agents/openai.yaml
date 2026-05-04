@@ -1,0 +1,4 @@
+interface:
+  display_name: "Python Integration Finisher"
+  short_description: "Wire modules into a working application"
+  default_prompt: "Integrate implemented Python modules into a working app flow, including config wiring, data flow, and integration tests."

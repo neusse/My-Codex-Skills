@@ -1,0 +1,4 @@
+interface:
+  display_name: "Python Requirements Author"
+  short_description: "Turn ideas into build-ready requirements"
+  default_prompt: "Turn a rough product idea into precise, implementation-ready requirements for a Python project, with acceptance criteria and constraints."

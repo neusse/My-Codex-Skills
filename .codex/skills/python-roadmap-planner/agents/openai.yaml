@@ -1,0 +1,4 @@
+interface:
+  display_name: "Python Roadmap Planner"
+  short_description: "Architecture to sequenced functional roadmap"
+  default_prompt: "Convert Python architecture into a sequenced Functional Module Roadmap with milestones, dependencies, and verification gates."

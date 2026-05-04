@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+stock_logs/
+portfolio_state_us.json
+*.log
+.env

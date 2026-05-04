@@ -1,0 +1,4 @@
+interface:
+  display_name: "Wiki Update"
+  short_description: "Revise existing wiki pages"
+  default_prompt: "Use $wiki-update to revise existing wiki pages with sourced changes, diffs before writing, and a log entry."
