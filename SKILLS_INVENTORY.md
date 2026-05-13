@@ -19,6 +19,7 @@ Generated: 2026-05-04
 | `python-roadmap-planner` | Converts architecture into a milestone-based delivery roadmap. |
 | `python-test-strategy` | Builds risk-based Python test strategy across unit/integration/e2e. |
 | `readme-hero-forge` | Adds a premium README hero section (banner, title, tagline, badges) when one is missing. |
+| `requirements-clarity` | Clarifies ambiguous requirements before implementation. |
 | `skill-packaging` | Packages and organizes Codex skills to repo standards. |
 | `us-stock-picker` | Produces capital-aware US equity and ETF ideas with position context. |
 | `wiki-ingest` | Ingests new source material into a personal wiki knowledge base. |

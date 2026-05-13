@@ -2,6 +2,16 @@
 
 All notable skill-repository changes are documented in this file.
 
+## 2026-05-12 - Add requirements-clarity skill
+
+### Added
+- `requirements-clarity`: Added Codex-compatible clarification workflow skill (`.codex/skills/requirements-clarity/SKILL.md`).
+- `requirements-clarity` PRD template: Added reference template for durable requirements output (`.codex/skills/requirements-clarity/references/prd-template.md`).
+
+### Changed
+- Approved skills table: Added `requirements-clarity` row with one-line description (`README.md`).
+- Inventory table: Added `requirements-clarity` row with matching description (`SKILLS_INVENTORY.md`).
+
 ## 2026-05-04 - Add news-scout skill
 
 ### Added
