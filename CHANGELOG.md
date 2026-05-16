@@ -2,6 +2,14 @@
 
 All notable skill-repository changes are documented in this file.
 
+## 2026-05-16 - Add Discord text output for saved exchanges
+
+### Added
+- `save-codex-exchange`: Added `--format discord-text` output for Discord-readable text files with ASCII table conversion and preserved fenced code blocks (`.codex/skills/save-codex-exchange/scripts/save_last_prompt.py`).
+
+### Changed
+- `save-codex-exchange`: Updated skill instructions with Discord upload guidance and the new text output example (`.codex/skills/save-codex-exchange/SKILL.md`).
+
 ## 2026-05-16 - Refine save-codex-exchange output headings
 
 ### Changed

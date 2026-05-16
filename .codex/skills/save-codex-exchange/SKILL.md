@@ -7,11 +7,13 @@ description: Save the immediately previous user prompt and Codex result to a Mar
 
 ## Purpose
 
-Save the immediately previous user prompt and the immediately previous Codex result as Markdown.
+Save the immediately previous user prompt and the immediately previous Codex result as Markdown or Discord-friendly text.
 
-This skill takes exactly one user-supplied argument:
+This skill takes one required user-supplied argument:
 
-- `filename`: the Markdown file path to write.
+- `filename`: the output file path to write.
+
+If the user asks for Discord upload readability, use `--format discord-text`. Otherwise use the default Markdown archive format.
 
 ## Important behavior
 
@@ -26,7 +28,7 @@ If the previous exchange included code blocks, command output, plans, or explana
 
 If the previous exchange is unavailable, incomplete, or ambiguous, write the best available reconstruction and include a short note under `## Notes`.
 
-## Output format
+## Markdown output format
 
 Write the file using this structure:
 
@@ -50,6 +52,17 @@ Write the file using this structure:
 <only include if needed>
 ```
 
+## Discord text output
+
+Use Discord text output when the saved exchange will be uploaded to Discord as a file and needs to preview readably.
+
+This mode:
+- Writes `.txt` by default.
+- Keeps headings as plain text.
+- Converts simple Markdown tables into fixed-width ASCII tables.
+- Preserves fenced code blocks.
+- Avoids relying on Discord to render Markdown tables.
+
 ## Script usage on Windows
 
 Use PowerShell temp files from the skill folder:
@@ -68,6 +81,16 @@ $ResultFile = Join-Path $env:TEMP "save_last_prompt_result.md"
 
 py .\scripts\save_last_prompt.py `
   --filename "handoff\last_exchange.md" `
+  --prompt-file $PromptFile `
+  --result-file $ResultFile
+```
+
+For a Discord-friendly upload file:
+
+```powershell
+py .\scripts\save_last_prompt.py `
+  --filename "handoff\last_exchange.txt" `
+  --format discord-text `
   --prompt-file $PromptFile `
   --result-file $ResultFile
 ```

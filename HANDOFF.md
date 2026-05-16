@@ -3,27 +3,31 @@
 ## Project
 - Name: My-Codex-Skills
 - Path: `%USERPROFILE%\Codex_Projects\My-Codex-Skills`
-- Last Updated Local: 2026-05-16 11:54 PDT
-- Last Updated UTC: 2026-05-16T18:54:50Z
+- Last Updated Local: 2026-05-16 13:02 PDT
+- Last Updated UTC: 2026-05-16T20:02:08Z
 - Stale After Hours: 24
 - Staleness: FRESH
 
 ## Session Dropoff Summary
 - Picked up from the fresh 2026-05-16 handoff and compared it with the live repository.
-- Reviewed the user-modified `save-codex-exchange` helper script.
-- Aligned the `save-codex-exchange` skill instructions with the helper output headings:
-  - `## Prompt:`
-  - `## Response:`
-- Updated `CHANGELOG.md` for the skill-script change.
-- Tested the helper with real temp prompt/result files and verified the new headings in the generated Markdown.
+- Added `--format discord-text` to `save-codex-exchange`.
+- Kept the default `markdown` output unchanged.
+- Added a contained Python converter for Discord-readable text output:
+  - writes `.txt` by default
+  - converts simple Markdown tables to fixed-width ASCII tables
+  - preserves fenced code blocks
+  - simplifies common Markdown formatting outside code blocks
+- Updated `SKILL.md` with Discord upload guidance and script usage.
+- Updated `CHANGELOG.md` for the skill change.
 - Deployed `save-codex-exchange` locally to `%USERPROFILE%\.codex\skills\save-codex-exchange`.
 
 ## Current State
 - Branch: `master`
 - Remote: `origin https://github.com/neusse/My-Codex-Skills.git`
-- Latest commit before this dropoff update: `563c103 Add validated utility skills`
-- Expected next commit: refine `save-codex-exchange` output headings.
-- Working tree at handoff refresh time contained only the intended `save-codex-exchange`, `CHANGELOG.md`, and `HANDOFF.md` updates.
+- Latest commit before this dropoff update: `03721fc Refine save-codex-exchange output headings`
+- Expected next commit: add Discord text output for `save-codex-exchange`.
+- Working tree at handoff refresh time contained the intended `save-codex-exchange`, `CHANGELOG.md`, and `HANDOFF.md` updates.
+- `forbidden.md` is an untracked user-requested saved exchange and should not be included in this skill change commit unless explicitly requested.
 
 ## Validations Completed
 - Frontmatter and code-fence validation for:
@@ -37,9 +41,8 @@
 - Python compile check:
   - `python -m py_compile .\.codex\skills\save-codex-exchange\scripts\save_last_prompt.py`
 - Functional save test:
-  - `python .\.codex\skills\save-codex-exchange\scripts\save_last_prompt.py --filename <temp>\saved --prompt-file <temp>\prompt.md --result-file <temp>\result.md --notes "test note"`
-  - Verified output file was created as `saved.md`.
-  - Verified `## Prompt:`, `## Response:`, prompt/result content, fenced code blocks, and notes were preserved.
+  - Default Markdown mode: verified `saved.md` still includes `# Saved Codex Exchange`, `## Prompt:`, `## Response:`, prompt content, and result content.
+  - Discord text mode: verified `saved.txt` includes plain headings, fixed-width ASCII tables converted from Markdown tables, links simplified for text, and fenced `powershell`/`json` code blocks preserved.
 - Deployment:
   - `pwsh -ExecutionPolicy Bypass -File .\scripts\deploy-skills.ps1 -Skills save-codex-exchange`
   - Verified deployed `SKILL.md` and `scripts/save_last_prompt.py` match the repo copies.
@@ -84,6 +87,8 @@
    - `python -m py_compile .\.codex\skills\save-codex-exchange\scripts\save_last_prompt.py`
 5. Deploy `save-codex-exchange` locally:
    - `pwsh -ExecutionPolicy Bypass -File .\scripts\deploy-skills.ps1 -Skills save-codex-exchange`
+6. Test Discord text output:
+   - `python .\.codex\skills\save-codex-exchange\scripts\save_last_prompt.py --filename <temp>\saved --format discord-text --prompt-file <temp>\prompt.md --result-file <temp>\result.md --notes "test note"`
 
 ## Next Suggested Work
 1. Add `scripts/validate-skills.ps1` so frontmatter, code-fence, and forbidden-word scans are first-class repo validation.
