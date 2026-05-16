@@ -3,14 +3,15 @@
 ## Project
 - Name: My-Codex-Skills
 - Path: `%USERPROFILE%\Codex_Projects\My-Codex-Skills`
-- Last Updated Local: 2026-05-16 13:28 PDT
-- Last Updated UTC: 2026-05-16T20:28:06Z
+- Last Updated Local: 2026-05-16 13:41 PDT
+- Last Updated UTC: 2026-05-16T20:41:12Z
 - Stale After Hours: 24
 - Staleness: FRESH
 
 ## Session Dropoff Summary
 - Picked up from the fresh 2026-05-16 handoff and compared it with the live repository.
 - Reworked `--format discord-text` to build the normal Markdown output first and then render that Markdown to fixed-width text.
+- Changed `--format` default to `auto`, so `.txt` and `.log` filenames infer Discord text output without requiring `--format discord-text`.
 - Kept the default `markdown` output unchanged.
 - Integrated a contained Python Markdown renderer for Discord-readable text output:
   - writes `.txt` by default
@@ -25,7 +26,7 @@
 - Branch: `master`
 - Remote: `origin https://github.com/neusse/My-Codex-Skills.git`
 - Latest commit before this dropoff update: `952707a Remove calendar exchange sample`
-- Expected next commit: render Discord text from the Markdown archive.
+- Expected next commit: infer Discord text from text filenames.
 - Working tree at handoff refresh time contained the intended `save-codex-exchange`, `CHANGELOG.md`, and `HANDOFF.md` updates.
 - `forbidden.md` is an untracked user-requested saved exchange and should not be included in this skill change commit unless explicitly requested.
 
@@ -43,6 +44,7 @@
 - Functional save test:
   - Default Markdown mode: verified `saved.md` still includes `# Saved Codex Exchange`, `## Prompt:`, `## Response:`, prompt content, and result content.
   - Discord text mode: verified `saved.txt` is rendered from Markdown and includes headings, wrapped paragraphs, lists, blockquotes, fixed-width wrapped tables, simplified links, and labeled `powershell`/`json` code sections.
+  - Auto mode: verified a requested `UPS_MAY-25_Options.txt` output stays `.txt`, does not create `.txt.md`, renders a fenced `text` code block as `[ text ]`, and removes triple backticks.
 - Deployment:
   - `pwsh -ExecutionPolicy Bypass -File .\scripts\deploy-skills.ps1 -Skills save-codex-exchange`
   - Verified deployed `SKILL.md` and `scripts/save_last_prompt.py` match the repo copies.
@@ -89,6 +91,8 @@
    - `pwsh -ExecutionPolicy Bypass -File .\scripts\deploy-skills.ps1 -Skills save-codex-exchange`
 6. Test Discord text output:
    - `python .\.codex\skills\save-codex-exchange\scripts\save_last_prompt.py --filename <temp>\saved --format discord-text --width 78 --prompt-file <temp>\prompt.md --result-file <temp>\result.md --notes "test note"`
+7. Test auto text filename inference:
+   - `python .\.codex\skills\save-codex-exchange\scripts\save_last_prompt.py --filename <temp>\UPS_MAY-25_Options.txt --prompt-file <temp>\prompt.md --result-file <temp>\result.md`
 
 ## Next Suggested Work
 1. Add `scripts/validate-skills.ps1` so frontmatter, code-fence, and forbidden-word scans are first-class repo validation.

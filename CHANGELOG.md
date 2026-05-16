@@ -2,6 +2,12 @@
 
 All notable skill-repository changes are documented in this file.
 
+## 2026-05-16 - Infer Discord text from text filenames
+
+### Changed
+- `save-codex-exchange`: Changed `--format` default to `auto` so `.txt` and `.log` filenames render as Discord-friendly fixed-width text without requiring an explicit `--format discord-text` flag (`.codex/skills/save-codex-exchange/scripts/save_last_prompt.py`).
+- `save-codex-exchange`: Updated usage guidance so Discord upload output can be requested by naming a `.txt` or `.log` file (`.codex/skills/save-codex-exchange/SKILL.md`).
+
 ## 2026-05-16 - Render Discord text from Markdown
 
 ### Changed

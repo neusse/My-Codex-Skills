@@ -13,7 +13,7 @@ This skill takes one required user-supplied argument:
 
 - `filename`: the output file path to write.
 
-If the user asks for Discord upload readability, use `--format discord-text`. Otherwise use the default Markdown archive format.
+If the user asks for Discord upload readability, write a `.txt` or `.log` file. The helper auto-selects Discord text for those extensions. Use `--format discord-text` when the extension is ambiguous.
 
 ## Important behavior
 
@@ -91,7 +91,6 @@ For a Discord-friendly upload file:
 ```powershell
 py .\scripts\save_last_prompt.py `
   --filename "handoff\last_exchange.txt" `
-  --format discord-text `
   --width 78 `
   --prompt-file $PromptFile `
   --result-file $ResultFile

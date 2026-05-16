@@ -23,6 +23,16 @@ def read_text(path: Path) -> str:
     return path.read_text(encoding="utf-8").strip()
 
 
+def resolve_output_format(filename: str, requested_format: str) -> str:
+    if requested_format != "auto":
+        return requested_format
+
+    suffix = Path(filename).expanduser().suffix.lower()
+    if suffix in DISCORD_TEXT_EXTENSIONS:
+        return "discord-text"
+    return "markdown"
+
+
 def ensure_output_filename(filename: str, output_format: str) -> Path:
     path = Path(filename).expanduser()
     if output_format == "markdown" and path.suffix.lower() != ".md":
@@ -409,9 +419,9 @@ def main() -> int:
     )
     parser.add_argument(
         "--format",
-        choices=("markdown", "discord-text"),
-        default="markdown",
-        help="Output format. markdown preserves the archive format; discord-text renders that Markdown as fixed-width text.",
+        choices=("auto", "markdown", "discord-text"),
+        default="auto",
+        help="Output format. auto uses discord-text for .txt/.log filenames and markdown otherwise.",
     )
     parser.add_argument(
         "--width",
@@ -442,7 +452,8 @@ def main() -> int:
 
     args = parser.parse_args()
 
-    output_path = ensure_output_filename(args.filename, args.format)
+    output_format = resolve_output_format(args.filename, args.format)
+    output_path = ensure_output_filename(args.filename, output_format)
     prompt_path = Path(args.prompt_file)
     result_path = Path(args.result_file)
 
@@ -451,7 +462,7 @@ def main() -> int:
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     markdown = build_markdown(output_path, prompt, result, args.notes)
-    if args.format == "discord-text":
+    if output_format == "discord-text":
         content = render_markdown_to_text(
             markdown,
             width=max(40, args.width),
