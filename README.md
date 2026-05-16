@@ -41,6 +41,8 @@ This repository is the source of truth for your personal Codex skills. It keeps 
 | `codex-windows-bootstrap` | Bootstraps and verifies a Windows Codex development environment. |
 | `fsd-writer` | Generates structured functional specification documents from rough requirements. |
 | `handoff` | Creates and refreshes durable `HANDOFF.md` operational checkpoints. |
+| `image-enhancer` | Improves screenshots and images for documentation, presentations, and publishing. |
+| `invoice-organizer` | Organizes invoices and receipts into reviewable bookkeeping or tax-ready structures. |
 | `news-scout` | Finds and summarizes high-signal recent news for a defined topic, company, or watchlist. |
 | `python-architecture-designer` | Designs Python module architecture, interfaces, and data flow. |
 | `python-integration-finisher` | Wires completed Python modules into a working end-to-end app. |
@@ -53,7 +55,9 @@ This repository is the source of truth for your personal Codex skills. It keeps 
 | `python-test-strategy` | Builds risk-based Python test strategy across unit/integration/e2e. |
 | `readme-hero-forge` | Adds a premium README hero section (banner, title, tagline, badges) when one is missing. |
 | `requirements-clarity` | Clarifies ambiguous requirements before implementation. |
+| `save-codex-exchange` | Saves the immediately previous prompt/result exchange to Markdown. |
 | `skill-packaging` | Packages and organizes Codex skills to repo standards. |
+| `tailored-resume-generator` | Tailors resumes to target job descriptions while preserving truthful claims. |
 | `us-stock-picker` | Produces capital-aware US equity and ETF ideas with position context. |
 | `wiki-ingest` | Ingests new source material into a personal wiki knowledge base. |
 | `wiki-init` | Initializes a new LLM-maintained personal wiki structure. |
