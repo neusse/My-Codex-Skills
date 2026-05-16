@@ -3,8 +3,8 @@
 ## Project
 - Name: My-Codex-Skills
 - Path: `%USERPROFILE%\Codex_Projects\My-Codex-Skills`
-- Last Updated Local: 2026-05-16 13:02 PDT
-- Last Updated UTC: 2026-05-16T20:02:08Z
+- Last Updated Local: 2026-05-16 13:09 PDT
+- Last Updated UTC: 2026-05-16T20:09:47Z
 - Stale After Hours: 24
 - Staleness: FRESH
 
@@ -20,13 +20,14 @@
 - Updated `SKILL.md` with Discord upload guidance and script usage.
 - Updated `CHANGELOG.md` for the skill change.
 - Deployed `save-codex-exchange` locally to `%USERPROFILE%\.codex\skills\save-codex-exchange`.
+- Removed the accidentally committed `calendar_test.md.txt` sample file from the published repo.
 
 ## Current State
 - Branch: `master`
 - Remote: `origin https://github.com/neusse/My-Codex-Skills.git`
-- Latest commit before this dropoff update: `03721fc Refine save-codex-exchange output headings`
-- Expected next commit: add Discord text output for `save-codex-exchange`.
-- Working tree at handoff refresh time contained the intended `save-codex-exchange`, `CHANGELOG.md`, and `HANDOFF.md` updates.
+- Latest skill commit: `f71b890 Add Discord text output for saved exchanges`
+- Cleanup commit pending at this handoff refresh: remove accidentally published `calendar_test.md.txt`.
+- Working tree at handoff refresh time contained the intended `calendar_test.md.txt` removal and `HANDOFF.md` refresh.
 - `forbidden.md` is an untracked user-requested saved exchange and should not be included in this skill change commit unless explicitly requested.
 
 ## Validations Completed
