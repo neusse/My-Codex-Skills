@@ -37,11 +37,11 @@ Write the file using this structure:
 - Source: Codex conversation
 - Filename: <filename>
 
-## Previous Prompt
+## Prompt:
 
 <previous user prompt>
 
-## Previous Result
+## Response:
 
 <previous Codex result>
 

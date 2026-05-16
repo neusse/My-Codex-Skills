@@ -2,6 +2,11 @@
 
 All notable skill-repository changes are documented in this file.
 
+## 2026-05-16 - Refine save-codex-exchange output headings
+
+### Changed
+- `save-codex-exchange`: Changed saved Markdown section headings to `Prompt:` and `Response:` and aligned the skill instructions with the helper output (`.codex/skills/save-codex-exchange/scripts/save_last_prompt.py`, `.codex/skills/save-codex-exchange/SKILL.md`).
+
 ## 2026-05-16 - Add and validate utility skills
 
 ### Added

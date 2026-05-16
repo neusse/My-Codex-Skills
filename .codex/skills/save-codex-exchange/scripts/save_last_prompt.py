@@ -35,11 +35,11 @@ def build_markdown(filename: Path, prompt: str, result: str, notes: str | None =
         "- Source: Codex conversation",
         f"- Filename: `{filename}`",
         "",
-        "## Previous Prompt",
+        "## Prompt:",
         "",
         prompt or "_No previous prompt content was available._",
         "",
-        "## Previous Result",
+        "## Response:",
         "",
         result or "_No previous result content was available._",
     ]
