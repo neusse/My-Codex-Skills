@@ -1,0 +1,27 @@
+Saved Codex Exchange
+====================
+
+Saved: 2026-05-16T20:06:17.712270+00:00
+Source: Codex conversation
+Filename: calendar_test.md.txt
+
+Prompt
+------
+
+show me a table that represents this month as a calendar.
+
+Response
+--------
+
+May 2026:
+
++-----+-----+-----+-----+-----+-----+-----+
+| Sun | Mon | Tue | Wed | Thu | Fri | Sat |
++-----+-----+-----+-----+-----+-----+-----+
+|     |     |     |     |     | 1   | 2   |
+| 3   | 4   | 5   | 6   | 7   | 8   | 9   |
+| 10  | 11  | 12  | 13  | 14  | 15  | 16  |
+| 17  | 18  | 19  | 20  | 21  | 22  | 23  |
+| 24  | 25  | 26  | 27  | 28  | 29  | 30  |
+| 31  |     |     |     |     |     |     |
++-----+-----+-----+-----+-----+-----+-----+
