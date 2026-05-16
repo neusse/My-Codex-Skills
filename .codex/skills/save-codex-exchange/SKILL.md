@@ -58,9 +58,10 @@ Use Discord text output when the saved exchange will be uploaded to Discord as a
 
 This mode:
 - Writes `.txt` by default.
-- Keeps headings as plain text.
-- Converts simple Markdown tables into fixed-width ASCII tables.
-- Preserves fenced code blocks.
+- Builds the normal Markdown document first, then renders that Markdown into fixed-width text.
+- Wraps headings, paragraphs, lists, blockquotes, links, and tables for plain-text readability.
+- Converts Markdown tables into fixed-width text tables.
+- Preserves fenced code blocks as labeled code sections.
 - Avoids relying on Discord to render Markdown tables.
 
 ## Script usage on Windows
@@ -91,6 +92,7 @@ For a Discord-friendly upload file:
 py .\scripts\save_last_prompt.py `
   --filename "handoff\last_exchange.txt" `
   --format discord-text `
+  --width 78 `
   --prompt-file $PromptFile `
   --result-file $ResultFile
 ```

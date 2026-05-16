@@ -2,6 +2,12 @@
 
 All notable skill-repository changes are documented in this file.
 
+## 2026-05-16 - Render Discord text from Markdown
+
+### Changed
+- `save-codex-exchange`: Replaced the initial direct Discord text converter with a fixed-width Markdown renderer that handles headings, paragraphs, lists, blockquotes, fenced code, links, and wrapped tables before writing Discord-friendly text output (`.codex/skills/save-codex-exchange/scripts/save_last_prompt.py`).
+- `save-codex-exchange`: Documented that Discord text output is rendered from the Markdown archive and added the `--width` option to the usage example (`.codex/skills/save-codex-exchange/SKILL.md`).
+
 ## 2026-05-16 - Add Discord text output for saved exchanges
 
 ### Added
