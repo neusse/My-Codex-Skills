@@ -2,6 +2,22 @@
 
 All notable skill-repository changes are documented in this file.
 
+## 2026-05-16 - Add standalone Markdown to text converter
+
+### Added
+- `save-codex-exchange`: Added a separate `md-to-text.py` script for direct Markdown-to-fixed-width-text conversion testing without integrating it into the skill workflow yet (`.codex/skills/save-codex-exchange/scripts/md-to-text.py`).
+- `save-codex-exchange`: Added a Markdown fixture that exercises headings, wrapping, lists, blockquotes, fenced code, inline formatting, rules, tables, links, and spacing for converter tests (`.codex/skills/save-codex-exchange/scripts/fixtures/md-to-text-test.md`).
+
+### Changed
+- `save-codex-exchange`: Documented the Markdown features handled by the standalone converter in the script comments (`.codex/skills/save-codex-exchange/scripts/md-to-text.py`).
+- `save-codex-exchange`: Integrated the Markdown-first Discord text flow so the saver always writes Markdown, converts requested Discord text through `md-to-text.py`, removes the Markdown intermediate, normalizes underscores to hyphens in output filenames, and reports the final output path (`.codex/skills/save-codex-exchange/scripts/save_last_prompt.py`, `.codex/skills/save-codex-exchange/SKILL.md`).
+- `save-codex-exchange`: Read prompt/result temp files with UTF-8 BOM handling so PowerShell-created input files do not leak BOM characters into saved Markdown or text output (`.codex/skills/save-codex-exchange/scripts/save_last_prompt.py`).
+
+## 2026-05-16 - Revert save-codex-exchange to Markdown baseline
+
+### Changed
+- `save-codex-exchange`: Reverted the skill instructions and helper script to commit `03721fc`, restoring the Markdown-only exchange output before Discord text conversion work is rebuilt as a separate converter (`.codex/skills/save-codex-exchange/SKILL.md`, `.codex/skills/save-codex-exchange/scripts/save_last_prompt.py`).
+
 ## 2026-05-16 - Infer Discord text from text filenames
 
 ### Changed

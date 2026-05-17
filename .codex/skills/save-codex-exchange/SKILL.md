@@ -7,13 +7,17 @@ description: Save the immediately previous user prompt and Codex result to a Mar
 
 ## Purpose
 
-Save the immediately previous user prompt and the immediately previous Codex result as Markdown or Discord-friendly text.
+Save the immediately previous user prompt and the immediately previous Codex result as Markdown or Discord-compatible text.
 
 This skill takes one required user-supplied argument:
 
 - `filename`: the output file path to write.
 
-If the user asks for Discord upload readability, write a `.txt` or `.log` file. The helper auto-selects Discord text for those extensions. Use `--format discord-text` when the extension is ambiguous.
+If the requested filename contains underscores, the helper changes them to hyphens in the output filename and reports that change.
+
+If the user asks for a Discord-compatible text file, request a `.txt` filename or use `--format discord-text`. The helper always writes a Markdown intermediate first, converts that Markdown with `md-to-text.py`, writes the final `.txt` file, and removes the intermediate Markdown file.
+
+If the user asks for Markdown, the helper writes the Markdown file and does not use the converter.
 
 ## Important behavior
 
@@ -52,18 +56,6 @@ Write the file using this structure:
 <only include if needed>
 ```
 
-## Discord text output
-
-Use Discord text output when the saved exchange will be uploaded to Discord as a file and needs to preview readably.
-
-This mode:
-- Writes `.txt` by default.
-- Builds the normal Markdown document first, then renders that Markdown into fixed-width text.
-- Wraps headings, paragraphs, lists, blockquotes, links, and tables for plain-text readability.
-- Converts Markdown tables into fixed-width text tables.
-- Preserves fenced code blocks as labeled code sections.
-- Avoids relying on Discord to render Markdown tables.
-
 ## Script usage on Windows
 
 Use PowerShell temp files from the skill folder:
@@ -86,15 +78,25 @@ py .\scripts\save_last_prompt.py `
   --result-file $ResultFile
 ```
 
-For a Discord-friendly upload file:
+For a Discord-compatible upload file:
 
 ```powershell
 py .\scripts\save_last_prompt.py `
   --filename "handoff\last_exchange.txt" `
-  --width 78 `
   --prompt-file $PromptFile `
   --result-file $ResultFile
 ```
+
+The helper will save the final file as `last-exchange.txt`, because underscores in the filename are normalized to hyphens.
+
+## Required user report
+
+After running the helper, tell the user:
+
+- Whether underscores were changed to hyphens in the output filename.
+- Whether the final output was Markdown or Discord-compatible text.
+- For Discord text, that Markdown was written as an intermediate, converted, and removed.
+- The final output path.
 
 ## Safety
 
