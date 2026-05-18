@@ -32,6 +32,8 @@ If the previous exchange included code blocks, command output, plans, or explana
 
 If the previous exchange is unavailable, incomplete, or ambiguous, write the best available reconstruction and include a short note under `## Notes`.
 
+If the previous prompt has misspellings, correct them only when the context clearly supports the intended word. Do not replace a misspelling with a nonsensical or out-of-context word.
+
 ## Markdown output format
 
 Write the file using this structure:

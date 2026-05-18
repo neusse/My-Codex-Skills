@@ -2,6 +2,11 @@
 
 All notable skill-repository changes are documented in this file.
 
+## 2026-05-18 - Refine save exchange typo handling
+
+### Changed
+- `save-codex-exchange`: Added instruction to correct misspellings in saved prompts only when context clearly supports the intended word, avoiding nonsensical substitutions (`.codex/skills/save-codex-exchange/SKILL.md`).
+
 ## 2026-05-16 - Add standalone Markdown to text converter
 
 ### Added
